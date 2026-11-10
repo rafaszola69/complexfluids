@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Soares Zola – Grupo de Física dos Fluidos Complexos</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html">
+      <span class="pt">Física dos Fluidos Complexos</span>
+      <span class="en">Complex Fluids Physics Group</span>
+      <img src="../logo-simbolo.svg" alt="" width="43" height="52">
+    </a>
+    <nav>
+      <a class="backlink" href="../index.html#membros"><span class="pt">← Voltar aos membros</span><span class="en">← Back to members</span></a>
+      <span class="lang"><button id="langBtn" type="button" aria-label="Mudar idioma / Change language">EN</button></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap profile">
+    <div class="avatar"><span>RZ</span><img src="../fotos/rafael-zola.jpg" alt="Rafael Soares Zola" onerror="this.remove()"></div>
+    <div>
+      <h1>Rafael Soares Zola</h1>
+      <p class="role"><span class="pt">Professor</span><span class="en">Faculty</span></p>
+      <p class="bio">
+        <span class="pt">Possui graduação em Física pela Universidade Estadual de Maringá (2005), mestrado em Física pela Universidade Estadual de Maringá (2007) e doutorado em Liquid Crystals - Kent State University (2012). Atualmente é professor da Universidade Tecnológica Federal do Paraná. Tem experiência na área de Física, com ênfase em Equação de Estado, Equilíbrio de Fases e Transições de Fase, atuando principalmente nos seguintes temas: cristais líquidos, problemas elásticos, Colestéricos, problemas de molhamento e interfaces, desenvolvimento de displays e espectroscopia de impedância. Membro permanente da Pós-Graduação em Ciência dos Materiais (PPGCEM) da UTFPR desde 18/11/2018. Membro permanente da Pós-Graduação em Física da UEM desde 02/02/2014.</span>
+        <span class="en">Holds a bachelor's degree in Physics from the State University of Maringá (2005), a master's degree in Physics from the State University of Maringá (2007) and a PhD in Liquid Crystals from Kent State University (2012). Currently a professor at the Federal University of Technology – Paraná. Has experience in Physics, with emphasis on Equation of State, Phase Equilibrium and Phase Transitions, working mainly on the following topics: liquid crystals, elastic problems, cholesterics, wetting and interface problems, display development and impedance spectroscopy. Permanent member of the Graduate Program in Materials Science (PPGCEM) at UTFPR since November 18, 2018. Permanent member of the Graduate Program in Physics at UEM since February 2, 2014.</span>
+      </p>
+      <div class="links">
+        <a class="btn" href="http://lattes.cnpq.br/8567293680002068" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a>
+        <a class="btn" href="https://scholar.google.com/citations?user=0CneH0oAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="mailto:rzola@utfpr.edu.br">rzola@utfpr.edu.br</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 <span class="pt">Grupo de Física dos Fluidos Complexos</span><span class="en">Complex Fluids Physics Group</span></div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('langBtn');
+    var root = document.documentElement;
+    var name = 'Rafael Soares Zola';
+    function apply(lang) {
+      root.lang = lang === 'en' ? 'en' : 'pt-BR';
+      btn.textContent = lang === 'en' ? 'PT' : 'EN';
+      document.title = name + ' – ' + (lang === 'en' ? 'Complex Fluids Physics Group' : 'Grupo de Física dos Fluidos Complexos');
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    apply(saved || ((navigator.language || 'pt').toLowerCase().indexOf('pt') === 0 ? 'pt' : 'en'));
+    btn.addEventListener('click', function () {
+      var next = root.lang === 'en' ? 'pt' : 'en';
+      apply(next);
+      try { localStorage.setItem('lang', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

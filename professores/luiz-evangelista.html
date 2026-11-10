@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luiz Roberto Evangelista – Grupo de Física dos Fluidos Complexos</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html">
+      <span class="pt">Física dos Fluidos Complexos</span>
+      <span class="en">Complex Fluids Physics Group</span>
+      <img src="../logo-simbolo.svg" alt="" width="43" height="52">
+    </a>
+    <nav>
+      <a class="backlink" href="../index.html#membros"><span class="pt">← Voltar aos membros</span><span class="en">← Back to members</span></a>
+      <span class="lang"><button id="langBtn" type="button" aria-label="Mudar idioma / Change language">EN</button></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap profile">
+    <div class="avatar"><span>LE</span><img src="../fotos/luiz-evangelista.jpg" alt="Luiz Roberto Evangelista" onerror="this.remove()"></div>
+    <div>
+      <h1>Luiz Roberto Evangelista</h1>
+      <p class="role"><span class="pt">Professor</span><span class="en">Faculty</span></p>
+      <p class="bio">
+        <span class="pt">Possui graduação em Física pela Universidade Estadual de Maringá (1979), mestrado em Físico-Química pela Universidade Federal de Santa Catarina (1983) e doutorado em Física de Partículas pela Universidade de São Paulo (1988), tendo realizado pós-doutoramento no Politecnico di Torino (Itália, 1989-1990), onde também foi Professor Visitante (1991-1994). Atualmente é professor titular-aposentado na área de Física Teórica do Departamento de Física da Universidade Estadual de Maringá e membro do corpo permanente do Programa de Pós-Graduação em Física do DFI-UEM. Tem experiência na área de Física Teórica, com ênfase em Equação de Estado, Equilíbrio de Fases e Transições de Fase, atuando principalmente nos seguintes temas: adsorção, cristais líquidos, teoria elástica-contínua, difusão anômala e aplicações do cálculo fracionário aos problemas de difusão de íons em sistemas complexos.</span>
+        <span class="en">Holds a bachelor's degree in Physics from the State University of Maringá (1979), a master's degree in Physical Chemistry from the Federal University of Santa Catarina (1983) and a PhD in Particle Physics from the University of São Paulo (1988), and carried out postdoctoral work at the Politecnico di Torino (Italy, 1989–1990), where he was also a Visiting Professor (1991–1994). Currently a retired full professor in Theoretical Physics at the Department of Physics of the State University of Maringá and a permanent member of the Graduate Program in Physics at DFI-UEM. Has experience in Theoretical Physics, with emphasis on Equation of State, Phase Equilibrium and Phase Transitions, working mainly on the following topics: adsorption, liquid crystals, continuum elastic theory, anomalous diffusion and applications of fractional calculus to problems of ion diffusion in complex systems.</span>
+      </p>
+      <div class="links">
+        <a class="btn" href="http://lattes.cnpq.br/3821297511662902" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a>
+        <a class="btn" href="https://scholar.google.com/citations?hl=en&user=3myG-1oAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="mailto:lre@dfi.uem.br">lre@dfi.uem.br</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 <span class="pt">Grupo de Física dos Fluidos Complexos</span><span class="en">Complex Fluids Physics Group</span></div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('langBtn');
+    var root = document.documentElement;
+    var name = 'Luiz Roberto Evangelista';
+    function apply(lang) {
+      root.lang = lang === 'en' ? 'en' : 'pt-BR';
+      btn.textContent = lang === 'en' ? 'PT' : 'EN';
+      document.title = name + ' – ' + (lang === 'en' ? 'Complex Fluids Physics Group' : 'Grupo de Física dos Fluidos Complexos');
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    apply(saved || ((navigator.language || 'pt').toLowerCase().indexOf('pt') === 0 ? 'pt' : 'en'));
+    btn.addEventListener('click', function () {
+      var next = root.lang === 'en' ? 'pt' : 'en';
+      apply(next);
+      try { localStorage.setItem('lang', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
