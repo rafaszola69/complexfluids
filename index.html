@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo de Física dos Fluidos Complexos</title>
+<meta name="description" content="Grupo de Física dos Fluidos Complexos: cristais líquidos, elasticidade, molhamento e interfaces, displays, espectroscopia de impedância e aprendizado de máquina.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1d2430;
+    --muted: #5b6573;
+    --accent: #0f6e8c;
+    --accent-soft: #e3f1f5;
+    --line: #e3e1da;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12171d;
+      --surface: #1a2129;
+      --text: #e8ecf1;
+      --muted: #9aa5b3;
+      --accent: #5cc0dd;
+      --accent-soft: #1b2f38;
+      --line: #2a333d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* idioma */
+  html[lang="pt-BR"] .en { display: none !important; }
+  html[lang="en"] .pt { display: none !important; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; flex-wrap: wrap; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; text-decoration: none; color: var(--text); }
+  .brand img { display: block; }
+  nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  .lang button {
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    padding: 4px 10px; border-radius: 999px; cursor: pointer; font-size: .85rem;
+  }
+  .lang button:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero { padding: 72px 0 48px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 12px; }
+  .hero p.sub { color: var(--muted); font-size: 1.1rem; margin: 0; max-width: 640px; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.6rem; margin: 0 0 20px; }
+  h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .about p { max-width: 720px; margin: 0 0 16px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  .members h3.group { margin: 28px 0 12px; color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+  .person { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+  .person .name { font-weight: 600; }
+  .person .role { color: var(--muted); font-size: .9rem; }
+  .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); padding: 1px 10px; border-radius: 999px; font-size: .8rem; margin-top: 4px; }
+
+  .news-item { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .news-item:last-child { border-bottom: 0; }
+  .news-item time { color: var(--muted); font-size: .9rem; }
+  .placeholder { color: var(--muted); font-style: italic; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 560px) {
+    .news-item { grid-template-columns: 1fr; gap: 2px; }
+    .hero { padding: 48px 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio">
+      <img src="logo-simbolo.svg" alt="" width="30" height="37">
+      <span class="pt">Física dos Fluidos Complexos</span>
+      <span class="en">Complex Fluids Physics Group</span>
+    </a>
+    <nav>
+      <a href="#sobre"><span class="pt">Sobre</span><span class="en">About</span></a>
+      <a href="#linhas"><span class="pt">Pesquisa</span><span class="en">Research</span></a>
+      <a href="#membros"><span class="pt">Membros</span><span class="en">Members</span></a>
+      <a href="#publicacoes"><span class="pt">Publicações</span><span class="en">Publications</span></a>
+      <a href="#noticias"><span class="pt">Notícias</span><span class="en">News</span></a>
+      <a href="#contato"><span class="pt">Contato</span><span class="en">Contact</span></a>
+      <span class="lang"><button id="langBtn" type="button" aria-label="Mudar idioma / Change language">EN</button></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" id="inicio">
+    <h1>
+      <span class="pt">Grupo de Física dos Fluidos Complexos</span>
+      <span class="en">Complex Fluids Physics Group</span>
+    </h1>
+    <p class="sub">
+      <span class="pt">Cristais líquidos, interfaces e materiais moles: modelagem, simulação e experimentos.</span>
+      <span class="en">Liquid crystals, interfaces and soft materials: modeling, simulation and experiments.</span>
+    </p>
+  </div>
+
+  <section id="sobre" class="about">
+    <div class="wrap">
+      <h2><span class="pt">Sobre o grupo</span><span class="en">About the group</span></h2>
+
+      <div class="pt">
+        <p>Fluidos complexos são materiais que não se encaixam bem na divisão clássica entre sólidos, líquidos e gases. Eles ocupam um território intermediário: escoam como líquidos, mas guardam estrutura, memória ou ordem que lembram a dos sólidos. Muitos dos materiais que usamos no dia a dia pertencem a essa classe, como tintas, géis, espumas, emulsões, polímeros, soluções iônicas, fluidos biológicos e os cristais líquidos das telas de TVs e celulares.</p>
+        <p>O que une materiais tão diferentes é a escala em que a física acontece. Em fluidos complexos, o comportamento observado em escala macroscópica é determinado por estruturas muito maiores que átomos e moléculas isoladas, como agregados, cadeias, gotas e domínios ordenados. Pequenas mudanças na forma dessas estruturas, ou na maneira como elas interagem entre si e com as superfícies, podem alterar profundamente as propriedades do material, e é isso que torna esses sistemas ao mesmo tempo difíceis de descrever e tão ricos do ponto de vista tecnológico.</p>
+        <p>Nosso grupo estuda esses sistemas combinando modelagem, simulação e experimentos, com o objetivo de entender os mecanismos por trás de seu comportamento e de usar esse conhecimento no desenvolvimento de novos materiais e dispositivos.</p>
+      </div>
+
+      <div class="en">
+        <p>Complex fluids are materials that do not fit neatly into the classical division between solids, liquids and gases. They occupy an intermediate ground: they flow like liquids, yet retain structure, memory or order reminiscent of solids. Many materials we use every day belong to this class, such as inks, gels, foams, emulsions, polymers, ionic solutions, biological fluids and the liquid crystals in TV and phone displays.</p>
+        <p>What unites such different materials is the scale at which the physics takes place. In complex fluids, the macroscopic behavior is determined by structures much larger than individual atoms and molecules, such as aggregates, chains, droplets and ordered domains. Small changes in the shape of these structures, or in how they interact with one another and with surfaces, can profoundly alter the properties of the material. This is what makes these systems both hard to describe and technologically rich.</p>
+        <p>Our group studies these systems by combining modeling, simulation and experiments, aiming to understand the mechanisms behind their behavior and to use this knowledge in the development of new materials and devices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="linhas">
+    <div class="wrap">
+      <h2><span class="pt">Linhas de pesquisa</span><span class="en">Research lines</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="pt">Cristais líquidos</span><span class="en">Liquid crystals</span></h3>
+          <p><span class="pt">Fases nemáticas, colestéricas e outras fases ordenadas: estrutura, elasticidade, textura e resposta a campos externos.</span><span class="en">Nematic, cholesteric and other ordered phases: structure, elasticity, texture and response to external fields.</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="pt">Molhamento e interfaces</span><span class="en">Wetting and interfaces</span></h3>
+          <p><span class="pt">Comportamento de fluidos complexos junto a superfícies e interfaces, incluindo transições de molhamento.</span><span class="en">Behavior of complex fluids near surfaces and interfaces, including wetting transitions.</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="pt">Desenvolvimento de displays</span><span class="en">Display development</span></h3>
+          <p><span class="pt">Materiais e dispositivos baseados em cristais líquidos para aplicações em displays.</span><span class="en">Liquid-crystal-based materials and devices for display applications.</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="pt">Espectroscopia de impedância</span><span class="en">Impedance spectroscopy</span></h3>
+          <p><span class="pt">Caracterização elétrica de células e interfaces, e modelos de transporte de cargas.</span><span class="en">Electrical characterization of cells and interfaces, and charge transport models.</span></p>
+        </div>
+        <div class="card">
+          <h3><span class="pt">Aprendizado de máquina</span><span class="en">Machine learning</span></h3>
+          <p><span class="pt">Métodos de aprendizado de máquina aplicados a fluidos complexos.</span><span class="en">Machine learning methods applied to complex fluids.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="membros" class="members">
+    <div class="wrap">
+      <h2><span class="pt">Membros</span><span class="en">Members</span></h2>
+
+      <h3 class="group"><span class="pt">Professores</span><span class="en">Faculty</span></h3>
+      <div class="grid">
+        <div class="person"><div class="name">Rafael Soares Zola</div></div>
+        <div class="person"><div class="name">Rodolfo Teixeira de Souza</div></div>
+        <div class="person"><div class="name">Roberta Rarumi de Almeida</div></div>
+        <div class="person"><div class="name">Luiz Roberto Evangelista</div></div>
+        <div class="person"><div class="name">Ervin Kaminski Lenzi</div></div>
+      </div>
+
+      <h3 class="group"><span class="pt">Estudantes</span><span class="en">Students</span></h3>
+      <div class="grid">
+        <div class="person"><div class="name">Felipe Costa Cruz</div><span class="tag"><span class="pt">Doutorado</span><span class="en">PhD</span></span></div>
+        <div class="person"><div class="name">Luiz Pantaleão</div><span class="tag"><span class="pt">Doutorado</span><span class="en">PhD</span></span></div>
+        <div class="person"><div class="name">Luis Brasiliano</div><span class="tag"><span class="pt">Mestrado</span><span class="en">MSc</span></span></div>
+        <div class="person"><div class="name">José Eduardo da Rocha Rodrigues Ferreira</div><span class="tag"><span class="pt">Iniciação científica</span><span class="en">Undergraduate research</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publicacoes">
+    <div class="wrap">
+      <h2><span class="pt">Publicações</span><span class="en">Publications</span></h2>
+      <p class="placeholder">
+        <span class="pt">[Em construção] A lista de publicações será adicionada aqui. Enquanto isso, veja o Currículo Lattes e o Google Scholar dos membros.</span>
+        <span class="en">[Under construction] The publication list will be added here. Meanwhile, see the members' Lattes CV and Google Scholar profiles.</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="noticias">
+    <div class="wrap">
+      <h2><span class="pt">Últimas notícias</span><span class="en">Latest news</span></h2>
+      <div class="news-item">
+        <time datetime="2026-11">Nov 2026</time>
+        <div>
+          <strong><span class="pt">Nosso novo site está no ar</span><span class="en">Our new website is online</span></strong>
+          <div class="placeholder"><span class="pt">[Exemplo: substituir pela primeira notícia real]</span><span class="en">[Example: replace with the first real news item]</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <h2><span class="pt">Contato</span><span class="en">Contact</span></h2>
+      <p>
+        <span class="pt">Departamento de Física, Universidade Tecnológica Federal do Paraná (UTFPR), câmpus Apucarana<br>
+        Departamento de Física, Universidade Estadual de Maringá (UEM)</span>
+        <span class="en">Department of Physics, Federal University of Technology – Paraná (UTFPR), Apucarana campus<br>
+        Department of Physics, State University of Maringá (UEM)</span>
+      </p>
+      <p>
+        <span class="pt">E-mail:</span><span class="en">E-mail:</span>
+        <a href="mailto:rzola@utfpr.edu.br">rzola@utfpr.edu.br</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 <span class="pt">Grupo de Física dos Fluidos Complexos</span><span class="en">Complex Fluids Physics Group</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('langBtn');
+    var root = document.documentElement;
+    function apply(lang) {
+      root.lang = lang === 'en' ? 'en' : 'pt-BR';
+      btn.textContent = lang === 'en' ? 'PT' : 'EN';
+      document.title = lang === 'en' ? 'Complex Fluids Physics Group' : 'Grupo de Física dos Fluidos Complexos';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var initial = saved || ((navigator.language || 'pt').toLowerCase().indexOf('pt') === 0 ? 'pt' : 'en');
+    apply(initial);
+    btn.addEventListener('click', function () {
+      var next = root.lang === 'en' ? 'pt' : 'en';
+      apply(next);
+      try { localStorage.setItem('lang', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
