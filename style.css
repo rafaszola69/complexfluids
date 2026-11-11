@@ -52,9 +52,10 @@
   }
   .lang button:hover { border-color: var(--accent); color: var(--accent); }
 
-  .hero { padding: 72px 0 48px; }
+  .hero { padding: 72px 20px 48px; }
   .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 12px; }
-  .hero h1 .hero-logo { display: inline-block; height: 1.1em; width: auto; vertical-align: -0.2em; margin-left: .2em; }
+  .hero { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; }
+  .hero-logo-big { display: block; height: 240px; width: auto; justify-self: end; }
   .hero p.sub { color: var(--muted); font-size: 1.1rem; margin: 0; max-width: 640px; }
 
   section { padding: 44px 0; border-top: 1px solid var(--line); }
@@ -92,7 +93,8 @@
     .news-item { grid-template-columns: 1fr; gap: 6px; }
     .news-img { justify-self: start; }
     .news-img img { max-width: 260px; max-height: 220px; }
-    .hero { padding: 48px 0 32px; }
+    .hero { padding: 48px 20px 32px; grid-template-columns: 1fr; gap: 20px; }
+    .hero-logo-big { height: 130px; justify-self: start; }
   }
 
   /* links de nome (professores) */
